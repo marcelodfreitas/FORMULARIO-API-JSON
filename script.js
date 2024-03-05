@@ -16,3 +16,16 @@ formE1.addEventListener('submit', evento => {
         body:JSON.stringify(data)
     }).then(res => res.json()).then(data => console.log(data))
 })
+
+//Aqui eu o JS pegar o resultado da URL
+
+queryString = window.location.search;
+param = new URLSearchParams(queryString); 
+param.get('phone')
+
+
+input = document.querySelector("input[name=phone]");
+    
+//Aqui  eu passo o celular direto para dentro do input value 
+
+input.value = param.get('phone')
