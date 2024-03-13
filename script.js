@@ -6,7 +6,6 @@ formE1.addEventListener('submit', evento => {
     const formData = new FormData(formE1);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
 
     fetch('https://reqres.in/api/users', {
         method: 'POST',
@@ -17,15 +16,19 @@ formE1.addEventListener('submit', evento => {
     }).then(res => res.json()).then(data => console.log(data))
 })
 
-//Aqui eu o JS pegar o resultado da URL
 
 queryString = window.location.search;
 param = new URLSearchParams(queryString); 
+param.get('name')
 param.get('phone')
+param.get('email')
 
-
-input = document.querySelector("input[name=phone]");
-    
-//Aqui  eu passo o celular direto para dentro do input value 
+var input = document.querySelector("input[name=phone]")
+var value = document.querySelector("input[name=name]")
+//var date = document.querySelector("input[name=date]")
+var email = document.querySelector("input[name=email")
 
 input.value = param.get('phone')
+value.value = param.get('name')
+email.value = param.get('email')
+//date.value = param.get('date')
